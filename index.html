@@ -61,13 +61,33 @@
           if (Math.round(processing.random(1, 20)) == 5) {
             distance = VERTEX_MOVE;
             window.next_point[0] = window.next_point[0] + processing.random(-distance, distance);
+            if (window.next_point[0] < 0) {
+              window.next_point[0] = 0;
+            } else if (window.next_point[0] > processing.width) {
+              window.next_point[0] = processing.width;
+            }
             window.next_point[1] = window.next_point[1] + processing.random(-distance, distance);
+            if (window.next_point[1] < 0) {
+              window.next_point[1] = 0;
+            } else if (window.next_point[1] > processing.height) {
+              window.next_point[1] = processing.height;
+            }
             window.next_point_ref[0] = window.next_point[0];
             window.next_point_ref[1] = window.next_point[1];
           } else {
             distance = VERTEX_WIGGLE;
             window.next_point[0] = window.next_point[0] + processing.random(-distance, distance);
+            if (window.next_point[0] < 0) {
+              window.next_point[0] = 0;
+            } else if (window.next_point[0] > processing.width) {
+              window.next_point[0] = processing.width;
+            }
             window.next_point[1] = window.next_point[1] + processing.random(-distance, distance);
+            if (window.next_point[1] < 0) {
+              window.next_point[1] = 0;
+            } else if (window.next_point[1] > processing.height) {
+              window.next_point[1] = processing.height;
+            }
           }
 
           window.tcolor = window.tcolor.rotateRYB(1);
